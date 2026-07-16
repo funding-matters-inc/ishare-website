@@ -17,6 +17,60 @@
   <link rel="stylesheet" href="css/components/header.css" />
   <link rel="stylesheet" href="css/sections/footer.css" />
   <link rel="stylesheet" href="css/pages/healthcare-detail.css" />
+  <style>
+    .playground-gallery {
+      width: min(1200px, 95vw);
+      margin: 18px auto 72px;
+    }
+
+    .playground-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      grid-auto-rows: 64px;
+      gap: 1px;
+    }
+
+    .playground-gallery-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      background: #e2e8f0;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    }
+
+    .playground-gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .playground-gallery-card:hover img {
+      transform: scale(1.025);
+    }
+
+    .playground-gallery-card--1 { grid-column: 1 / span 7; grid-row: span 5; transform: translateY(3px); }
+    .playground-gallery-card--2 { grid-column: 8 / span 5; grid-row: span 4; transform: translateY(-2px); }
+    .playground-gallery-card--3 { grid-column: 1 / span 5; grid-row: span 4; transform: translateY(-1px); }
+    .playground-gallery-card--4 { grid-column: 6 / span 7; grid-row: span 5; transform: translateY(2px); }
+
+    @media (max-width: 900px) {
+      .playground-gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 180px;
+      }
+
+      .playground-gallery-card--1,
+      .playground-gallery-card--2,
+      .playground-gallery-card--3,
+      .playground-gallery-card--4 {
+        grid-column: auto;
+        grid-row: auto;
+        transform: none;
+      }
+    }
+  </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B00JN6GQJZ"></script>
 <script>
@@ -96,6 +150,7 @@
 
           <div class="hero-ctas">
             <a href="#viewer" class="btn btn-primary">Open 360 Experience</a>
+            <a href="#naming" class="btn btn-primary">Explore Opportunities</a>
             <a href="https://ishare.giftabulatornow.com/app/give-now?locale=en-CA"
                class="btn btn-orange btn-pill"
                target="_blank"
@@ -121,6 +176,60 @@
         This social services initiative supports healthy childhood development through inclusive, outdoor, play-based
         experiences designed to strengthen confidence, connection, and community well-being.
       </p>
+      <p class="table-subtitle">
+        The playground layout is designed to support a full range of early and school-age development outcomes,
+        including gross motor skill development, balance, risk navigation, cooperative play, and imaginative exploration.
+        Through intentional placement of movement zones, social zones, and nature-integrated activity spaces, this
+        project creates an environment where families can gather, children can thrive, and community pride can grow.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2 class="table-title" id="naming">Campaign Priorities</h2>
+      <p class="table-subtitle">
+        Naming opportunities within the Children's Discovery Playground provide meaningful ways for donors to support
+        child development and family well-being while creating a visible, lasting legacy in the community.
+      </p>
+    </section>
+
+    <div class="table-wrap">
+      <table class="naming-table">
+        <thead>
+          <tr>
+            <th>Space</th>
+            <th>Cost</th>
+            <th># Available</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Children's Discovery Playground (Lead Naming)</td><td class="cost">$500,000</td><td class="avail">1</td></tr>
+          <tr><td>Adventure Climbing Zone</td><td class="cost">$250,000</td><td class="avail">1</td></tr>
+          <tr><td>Bridge &amp; Balance Trail</td><td class="cost">$150,000</td><td class="avail">1</td></tr>
+          <tr><td>Slide Mountain</td><td class="cost">$125,000</td><td class="avail">1</td></tr>
+          <tr><td>Swing Garden</td><td class="cost">$100,000</td><td class="avail">2</td></tr>
+          <tr><td>Inclusive Play Surface Zone</td><td class="cost">$75,000</td><td class="avail">2</td></tr>
+          <tr><td>Nature Discovery Corner</td><td class="cost">$50,000</td><td class="avail">2</td></tr>
+          <tr><td>Family Gathering Bench Cluster</td><td class="cost">$25,000</td><td class="avail">6</td></tr>
+          <tr><td>Celebration Tree &amp; Memory Marker</td><td class="cost">$10,000</td><td class="avail">20</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <section class="playground-gallery" aria-label="Playground image gallery">
+      <div class="playground-gallery-grid">
+        <figure class="playground-gallery-card playground-gallery-card--1">
+          <img src="img/playgrond/1.png" alt="Children's Discovery Playground visual 1" loading="lazy" />
+        </figure>
+        <figure class="playground-gallery-card playground-gallery-card--2">
+          <img src="img/playgrond/2.png" alt="Children's Discovery Playground visual 2" loading="lazy" />
+        </figure>
+        <figure class="playground-gallery-card playground-gallery-card--3">
+          <img src="img/playgrond/3.png" alt="Children's Discovery Playground visual 3" loading="lazy" />
+        </figure>
+        <figure class="playground-gallery-card playground-gallery-card--4">
+          <img src="img/playgrond/4.png" alt="Children's Discovery Playground visual 4" loading="lazy" />
+        </figure>
+      </div>
     </section>
   </main>
 
