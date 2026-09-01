@@ -5,17 +5,23 @@ Static multi-page marketing/fundraising site (HTML/CSS/vanilla JS, no framework,
 ## Deploy
 
 Hosted on **Cloudflare Pages**, connected directly to this repo's `main` branch.
-Push to `main` → Cloudflare builds and deploys automatically. No build command,
-no manual deploy step, no GitHub Pages (that was retired when this moved to
-Cloudflare). Live at `ishare.ca`.
+Push to `main` → Cloudflare builds and deploys automatically. No manual deploy
+step, no GitHub Pages (that was retired when this moved to Cloudflare). Live
+at `ishare.ca`.
 
 ## Large media (videos/images)
 
-Cloudflare Pages rejects any single file over **25 MiB**. Do not commit large
-video files to this repo — upload them to the `ishare-website-assets` R2
-bucket instead and reference the public `r2.dev` URL from the HTML, the same
-way the existing videos do. Check any `<video>`/`<source>` tag pointing at an
-`r2.dev` URL for the pattern to copy.
+Cloudflare Pages rejects any single file over **25 MiB** — but you don't need
+to think about that. Just add the file at its normal local path (e.g.
+`img/culture/foo/bar.mp4`), reference it normally in HTML
+(`<video src="img/culture/foo/bar.mp4">`), and commit/push like anything else.
+
+`scripts/cf-pages-deploy.mjs` runs as the Cloudflare Pages build step and
+handles the rest automatically: any file over 25 MiB gets uploaded to the
+`ishare-website-assets` R2 bucket, removed from the deployed output, and a
+redirect from its original path to the R2 URL gets added to `_redirects`. The
+page keeps working exactly as written — no R2 dashboard, no manual URL
+substitution.
 
 ## Known issues
 
